@@ -3,8 +3,8 @@
 %bcond_with	tests	# perform "make test"
 
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Apache
-%define	pnam	SessionManager
+%define		pdir	Apache
+%define		pnam	SessionManager
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
 Summary(pl):	Apache::SessionManager - proste rozszerzenie mod_perla do obs³ugi sesji
 Name:		perl-Apache-SessionManager
