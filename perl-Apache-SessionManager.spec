@@ -1,24 +1,23 @@
 #
 # Conditional build:
-# _with_tests - perform "make test"
-#
+%bcond_with	tests	# perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Apache
 %define	pnam	SessionManager
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
 Summary(pl):	Apache::SessionManager - proste rozszerzenie mod_perla do obs³ugi sesji
 Name:		perl-Apache-SessionManager
-Version:	0.06
+Version:	1.00
 Release:	1
 # same as perl
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	8e5332438deedd67ca71d5c3536ebb98
+# Source0-md5:	e88605e7130611ff4ea84caadba8e1fc
 BuildRequires:	apache-mod_perl
 BuildRequires:	perl-Apache-Session
 BuildRequires:	perl-devel >= 5.8
-BuildRequires:	perl-libapreq
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,11 +44,11 @@ sesji bezpo¶rednio z pnotes przy pomocy predefiniowanego klucza
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-echo '!' | perl Makefile.PL \
+perl Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
 
-%{?_with_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
