@@ -12,23 +12,30 @@ Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	perl >= 5.6
-BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildRequires:	apache-mod_perl
+BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Apache-Session
+BuildRequires:	rpm-perlprov >= 3.0.3-26
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Apache::SessionManager is a mod_perl module that helps session
-management of a web application. This simple module is a wrapper around
-Apache::Session persistence framework for session data.  It creates a
-session object and makes it available to all other handlers by putting
-in pnotes. In a mod_perl handler you can retrieve the session object
-directly from pnotes with predefined key 'SESSION_MANAGER_HANDLE':
+management of a web application. This simple module is a wrapper
+around Apache::Session persistence framework for session data. It
+creates a session object and makes it available to all other handlers
+by putting in pnotes. In a mod_perl handler you can retrieve the
+session object directly from pnotes with predefined key
+'SESSION_MANAGER_HANDLE'.
 
-# %description -l pl
-# TODO
+%description -l pl
+Apache::SessionManager to modu³ do mod_perla pomagaj±cy w zarz±dzaniu
+sesjami w aplikacjach WWW. Ten prosty modu³ jest obudowaniem szkieletu
+zachowywania danych sesji Apache::Session. Tworzy on obiekt sesji i
+czyni go dostêpnym dla wszystkich innych funkcji obs³uguj±cych poprzez
+umieszcenie w pnotes. W obs³udze mod_perla mo¿na odczytywaæ obiekt
+sesji bezpo¶rednio z pnotes przy pomocy predefiniowanego klucza
+'SESSION_MANAGER_HANDLE'.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
