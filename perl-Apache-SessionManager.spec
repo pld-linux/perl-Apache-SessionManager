@@ -8,17 +8,18 @@
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
 Summary(pl):	Apache::SessionManager - proste rozszerzenie mod_perla do obs³ugi sesji
 Name:		perl-Apache-SessionManager
-Version:	0.04
-Release:	4
-License:	GPL/Artistic
+Version:	0.06
+Release:	1
+# same as perl
+License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b6a6e234ddac1b9a4741ab0413aa3013
+# Source0-md5:	8e5332438deedd67ca71d5c3536ebb98
 BuildRequires:	apache-mod_perl
-BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl-Apache-Session
+BuildRequires:	perl-devel >= 5.8
 BuildRequires:	perl-libapreq
-BuildRequires:	rpm-perlprov >= 3.0.3-26
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -44,7 +45,8 @@ sesji bezpo¶rednio z pnotes przy pomocy predefiniowanego klucza
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-echo '!' | perl Makefile.PL
+echo '!' | perl Makefile.PL \
+	INSTALLDIRS=vendor
 %{__make}
 
 %{?_with_tests:%{__make} test}
@@ -52,7 +54,8 @@ echo '!' | perl Makefile.PL
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,5 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Change* README
-%{perl_sitelib}/%{pdir}/*.pm
+%{perl_vendorlib}/%{pdir}/*.pm
 %{_mandir}/man3/*
