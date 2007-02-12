@@ -6,7 +6,7 @@
 %define		pdir	Apache
 %define		pnam	SessionManager
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
-Summary(pl):	Apache::SessionManager - proste rozszerzenie mod_perla do obs³ugi sesji
+Summary(pl.UTF-8):   Apache::SessionManager - proste rozszerzenie mod_perla do obsÅ‚ugi sesji
 Name:		perl-Apache-SessionManager
 Version:	1.03
 Release:	1
@@ -31,13 +31,13 @@ by putting in pnotes. In a mod_perl handler you can retrieve the
 session object directly from pnotes with predefined key
 'SESSION_MANAGER_HANDLE'.
 
-%description -l pl
-Apache::SessionManager to modu³ do mod_perla pomagaj±cy w zarz±dzaniu
-sesjami w aplikacjach WWW. Ten prosty modu³ jest obudowaniem szkieletu
+%description -l pl.UTF-8
+Apache::SessionManager to moduÅ‚ do mod_perla pomagajÄ…cy w zarzÄ…dzaniu
+sesjami w aplikacjach WWW. Ten prosty moduÅ‚ jest obudowaniem szkieletu
 zachowywania danych sesji Apache::Session. Tworzy on obiekt sesji i
-czyni go dostêpnym dla wszystkich innych funkcji obs³uguj±cych poprzez
-umieszcenie w pnotes. W obs³udze mod_perla mo¿na odczytywaæ obiekt
-sesji bezpo¶rednio z pnotes przy pomocy predefiniowanego klucza
+czyni go dostÄ™pnym dla wszystkich innych funkcji obsÅ‚ugujÄ…cych poprzez
+umieszcenie w pnotes. W obsÅ‚udze mod_perla moÅ¼na odczytywaÄ‡ obiekt
+sesji bezpoÅ›rednio z pnotes przy pomocy predefiniowanego klucza
 'SESSION_MANAGER_HANDLE'.
 
 %prep
