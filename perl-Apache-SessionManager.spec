@@ -6,7 +6,7 @@
 %define		pdir	Apache
 %define		pnam	SessionManager
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
-Summary(pl.UTF-8):   Apache::SessionManager - proste rozszerzenie mod_perla do obsługi sesji
+Summary(pl.UTF-8):	Apache::SessionManager - proste rozszerzenie mod_perla do obsługi sesji
 Name:		perl-Apache-SessionManager
 Version:	1.03
 Release:	1
