@@ -9,7 +9,7 @@ Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
 Summary(pl.UTF-8):	Apache::SessionManager - proste rozszerzenie mod_perla do obsługi sesji
 Name:		perl-Apache-SessionManager
 Version:	1.03
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
