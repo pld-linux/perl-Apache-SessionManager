@@ -2,9 +2,9 @@
 # Conditional build:
 %bcond_with	tests	# perform "make test"
 
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Apache
 %define		pnam	SessionManager
+%include	/usr/lib/rpm/macros.perl
 Summary:	Apache::SessionManager - simple mod_perl extension to manage sessions
 Summary(pl.UTF-8):	Apache::SessionManager - proste rozszerzenie mod_perla do obsługi sesji
 Name:		perl-Apache-SessionManager
@@ -15,6 +15,7 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	85b412074edde465fcf291a1fef0e5e2
+URL:		http://search.cpan.org/dist/Apache-SessionManager/
 BuildRequires:	apache-mod_perl
 BuildRequires:	perl-Apache-Session
 BuildRequires:	perl-devel >= 1:5.8.0
